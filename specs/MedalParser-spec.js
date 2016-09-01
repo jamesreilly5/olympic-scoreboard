@@ -14,9 +14,12 @@ describe('MedalParser', function() {
 
         describe('when no data is supplied', function() {
             it('returns an empty array', function() {
-                expect(JsonParser.parse(null)).toEqual([]);
+                expect(JsonParser.parse(null)).toEqual({});
             });
         });
+
+        // TODO: Valid medal name
+        // TODO: Valid countries
     });
 
 });
