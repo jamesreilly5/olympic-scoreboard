@@ -6,15 +6,21 @@ var parseMedalData = function(athlete) {
     };
 };
 
-var addToTally = function(tally, medalData) {
-    if (!tally[medalData.country]) {
-        tally[medalData.country] = {
-            Country: medalData.country, Gold: 0, Silver: 0, Bronze: 0, Total: 0
-        }
+var addToTally = function(tally, parsedData) {
+    if (!tally[parsedData.country]) {
+        tally[parsedData.country] = createMedalData(parsedData);
     }
-    tally[medalData.country][medalData.medal]++;
-    tally[medalData.country].Total++;
-}
+    incrementMedalData(tally, parsedData.country, parsedData.medal);
+};
+
+var createMedalData = function(parsedData) {
+    return { Country: parsedData.country, Gold: 0, Silver: 0, Bronze: 0, Total: 0 };
+};
+
+var incrementMedalData = function(tally, country, medal) {
+    tally[country][medal]++;
+    tally[country].Total++;
+};
 
 var values = function(hash) {
     var keys = Object.keys(hash);
@@ -24,7 +30,7 @@ var values = function(hash) {
         }
     );
     return values;
-}
+};
 
 module.exports = {
     parse: function(athletes) {
