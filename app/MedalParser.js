@@ -24,11 +24,7 @@ var incrementMedalData = function(tally, country, medal) {
 
 var values = function(hash) {
     var keys = Object.keys(hash);
-    var values = keys.map(
-        function(v) {
-            return hash[v];
-        }
-    );
+    var values = keys.map(function(v) { return hash[v]; });
     return values;
 };
 
