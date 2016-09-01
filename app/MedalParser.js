@@ -9,11 +9,21 @@ var parseMedalData = function(athlete) {
 var addToTally = function(tally, medalData) {
     if (!tally[medalData.country]) {
         tally[medalData.country] = {
-            Gold: 0, Silver: 0, Bronze: 0, Total: 0
+            Country: medalData.country, Gold: 0, Silver: 0, Bronze: 0, Total: 0
         }
     }
     tally[medalData.country][medalData.medal]++;
     tally[medalData.country].Total++;
+}
+
+var values = function(hash) {
+    var keys = Object.keys(hash);
+    var values = keys.map(
+        function(v) {
+            return hash[v];
+        }
+    );
+    return values;
 }
 
 module.exports = {
@@ -26,6 +36,6 @@ module.exports = {
             var medalData = parseMedalData(athletes.shift());
             addToTally(medalTally, medalData);
         }
-        return medalTally;
+        return values(medalTally);
     }
 };
