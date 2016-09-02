@@ -1,7 +1,7 @@
 module.exports = {
     MEDALS: {
-        GOLD: 'Gold',
-        SILVER: 'Silver',
-        BRONZE: 'Bronze'
+        GOLD: 'gold',
+        SILVER: 'silver',
+        BRONZE: 'bronze'
     }
 };

@@ -22,7 +22,7 @@ describe('MedalParser', function() {
             var invalidResponseData = require('./fixtures/invalidData.json');
             it('it is ignored in the results', function() {
                 expect(JsonParser.parse(invalidResponseData)).toEqual(
-                    [ { Country: 'USA', Gold: 1, Silver: 0, Bronze: 0, Total: 1 } ]
+                    [ { country: 'USA', gold: 1, silver: 0, bronze: 0, total: 1 } ]
                 );
             });
         });

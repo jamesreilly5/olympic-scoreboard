@@ -11,22 +11,23 @@ var parseMedalData = function(athlete) {
 };
 
 var addToTally = function(tally, parsedData) {
-    if(VALID_VALUES.indexOf(parsedData.medal) === -1) {
+    var medal = parsedData.medal.toLocaleLowerCase()
+    if(VALID_VALUES.indexOf(medal) === -1) {
         return;
     }
     if (!tally[parsedData.country]) {
         tally[parsedData.country] = createMedalData(parsedData);
     }
-    incrementMedalData(tally, parsedData.country, parsedData.medal);
+    incrementMedalData(tally, parsedData.country, medal);
 };
 
 var createMedalData = function(parsedData) {
-    return { Country: parsedData.country, Gold: 0, Silver: 0, Bronze: 0, Total: 0 };
+    return { country: parsedData.country, gold: 0, silver: 0, bronze: 0, total: 0 };
 };
 
 var incrementMedalData = function(tally, country, medal) {
     tally[country][medal]++;
-    tally[country].Total++;
+    tally[country].total++;
 };
 
 var values = function(hash) {

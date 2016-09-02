@@ -20,7 +20,7 @@ var MedalList = React.createClass({
 
     handleDataLoadSuccess: function(data) {
         var parsedData = MedalParser.parse(data);
-        this.setState({medalTally: SortUtils.sortDesc(parsedData, ['Gold', 'Silver', 'Bronze'])});
+        this.setState({medalTally: SortUtils.sortDesc(parsedData, ['gold', 'silver', 'bronze'])});
     },
 
     render: function() {
@@ -39,21 +39,31 @@ var MedalList = React.createClass({
 
                 <section className='container medal-list'>
                     <div className='row'>
-                        <div className='col-xs-offset-1 col-xs-3'><h3 className='hidden-xs'>Country</h3></div>
-                        <div className='col-xs-2 coin gold'><h3 className='hidden-xs'>{Enums.MEDALS.GOLD}</h3><h3 className='visible-xs'>G</h3></div>
-                        <div className='col-xs-2 coin silver'><h3 className='hidden-xs'>{Enums.MEDALS.SILVER}</h3><h3 className='visible-xs'>S</h3></div>
-                        <div className='col-xs-2 coin bronze'><h3 className='hidden-xs'>{Enums.MEDALS.BRONZE}</h3><h3 className='visible-xs'>B</h3></div>
-                        <div className='col-xs-2'><h3 className='hidden-xs'>Total</h3><h3 className='visible-xs'>T</h3></div>
+                        <div className='col-xs-offset-1 col-xs-3'>
+                            <h3 className='hidden-xs'>Country</h3>
+                        </div>
+                        <div className='col-xs-2 coin gold'>
+                            <h3 className='hidden-xs medal-name'>{Enums.MEDALS.GOLD}</h3><h3 className='visible-xs'>G</h3>
+                        </div>
+                        <div className='col-xs-2 coin silver'>
+                            <h3 className='hidden-xs medal-name'>{Enums.MEDALS.SILVER}</h3><h3 className='visible-xs'>S</h3>
+                        </div>
+                        <div className='col-xs-2 coin bronze'>
+                            <h3 className='hidden-xs medal-name'>{Enums.MEDALS.BRONZE}</h3><h3 className='visible-xs'>B</h3>
+                        </div>
+                        <div className='col-xs-2'>
+                            <h3 className='hidden-xs'>Total</h3><h3 className='visible-xs'>T</h3>
+                        </div>
                     </div>
                     {
                         medalTallyList.map(function(medalData, i) {
                             return <MedalInfo key={i}
                                         position={i + 1}
-                                        country={medalData.Country}
-                                        gold={medalData.Gold}
-                                        silver={medalData.Silver}
-                                        bronze={medalData.Bronze}
-                                        total={medalData.Total}
+                                        country={medalData.country}
+                                        gold={medalData.gold}
+                                        silver={medalData.silver}
+                                        bronze={medalData.bronze}
+                                        total={medalData.total}
                                     />
                         })
                     }
