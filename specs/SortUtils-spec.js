@@ -31,11 +31,14 @@ describe('SortUtils', function() {
 
         describe('when an invalid key is provided', function() {
             it('does not sort the array', function() {
-            });
-        });
-
-        describe('when the value to compare is not a number', function() {
-            it('does not sort the array', function() {
+                expect(SortUtils.sortDesc(parsedData, ['Gold', 'Silver111', 'Bronze'])).toEqual(
+                    [
+                        { "Country": "ETH", "Gold": 2, "Silver": 1, "Bronze": 0, "Total": 3 },
+                        { "Country": "USA", "Gold": 0, "Silver": 0, "Bronze": 2, "Total": 2 },
+                        { "Country": "TUR", "Gold": 0, "Silver": 1, "Bronze": 1, "Total": 2 },
+                        { "Country": "KEN", "Gold": 0, "Silver": 0, "Bronze": 1, "Total": 1 }
+                    ]
+                );
             });
         });
     });

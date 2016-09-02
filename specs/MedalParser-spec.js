@@ -26,7 +26,6 @@ describe('MedalParser', function() {
                 );
             });
         });
-        // TODO: Valid countries
     });
 
 });
