@@ -37,14 +37,12 @@ var MedalList = React.createClass({
                 </section>
 
                 <section className='container medal-list'>
-                    <div className='col-md-12 title'>
-                        <div className='row'>
-                            <div className='col-xs-offset-1 col-xs-3'><h3>Country</h3></div>
-                            <div className='col-xs-2'><h3>Gold</h3></div>
-                            <div className='col-xs-2'><h3>Silver</h3></div>
-                            <div className='col-xs-2'><h3>Bronze</h3></div>
-                            <div className='col-xs-2'><h3>Total</h3></div>
-                        </div>
+                    <div className='row'>
+                        <div className='col-xs-offset-1 col-xs-3'><h3 className='hidden-xs'>Country</h3></div>
+                        <div className='col-xs-2 coin gold'><h3 className='hidden-xs'>Gold</h3><h3 className='visible-xs'>G</h3></div>
+                        <div className='col-xs-2 coin silver'><h3 className='hidden-xs'>Silver</h3><h3 className='visible-xs'>S</h3></div>
+                        <div className='col-xs-2 coin bronze'><h3 className='hidden-xs'>Bronze</h3><h3 className='visible-xs'>B</h3></div>
+                        <div className='col-xs-2'><h3 className='hidden-xs'>Total</h3><h3 className='visible-xs'>T</h3></div>
                     </div>
                     {
                         medalTallyList.map(function(medalData, i) {
