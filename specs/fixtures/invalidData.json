@@ -1,0 +1,16 @@
+[
+    {
+        "athlete"  : "KOGO, Micah",
+        "country" : "USA",
+        "sex" : "Men",
+        "event" : "10000m",
+        "medal" : "Gold1"
+    },
+    {
+        "athlete" : "BEKELE, Kenenisa",
+        "country" : "USA",
+        "sex" :"Men",
+        "event" : "10000m",
+        "medal" : "Gold"
+    }
+]

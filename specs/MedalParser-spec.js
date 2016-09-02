@@ -18,7 +18,14 @@ describe('MedalParser', function() {
             });
         });
 
-        // TODO: Valid medal name
+        describe('when an invalid medal name is provided', function() {
+            var invalidResponseData = require('./fixtures/invalidData.json');
+            it('it is ignored in the results', function() {
+                expect(JsonParser.parse(invalidResponseData)).toEqual(
+                    [ { Country: 'USA', Gold: 1, Silver: 0, Bronze: 0, Total: 1 } ]
+                );
+            });
+        });
         // TODO: Valid countries
     });
 

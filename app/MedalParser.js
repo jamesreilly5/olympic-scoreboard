@@ -1,3 +1,7 @@
+var Enums = require('./config/Enums');
+
+var VALID_VALUES = [Enums.MEDALS.GOLD, Enums.MEDALS.SILVER, Enums.MEDALS.BRONZE]
+
 // Data isn't complex enough to warrant a separate module yet.
 var parseMedalData = function(athlete) {
     return {
@@ -7,6 +11,9 @@ var parseMedalData = function(athlete) {
 };
 
 var addToTally = function(tally, parsedData) {
+    if(VALID_VALUES.indexOf(parsedData.medal) === -1) {
+        return;
+    }
     if (!tally[parsedData.country]) {
         tally[parsedData.country] = createMedalData(parsedData);
     }
