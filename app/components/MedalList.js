@@ -39,18 +39,22 @@ var MedalList = React.createClass({
                 <section className='container medal-list'>
                     <div className='col-md-12 title'>
                         <div className='row'>
-                            <div className='col-xs-6'><h3>Country</h3></div>
+                            <div className='col-xs-offset-1 col-xs-3'><h3>Country</h3></div>
                             <div className='col-xs-2'><h3>Gold</h3></div>
                             <div className='col-xs-2'><h3>Silver</h3></div>
                             <div className='col-xs-2'><h3>Bronze</h3></div>
+                            <div className='col-xs-2'><h3>Total</h3></div>
                         </div>
                     </div>
                     {
-                        medalTallyList.map(function(medalData) {
-                            return <MedalInfo country={medalData.Country}
+                        medalTallyList.map(function(medalData, i) {
+                            return <MedalInfo key={i}
+                                        position={i + 1}
+                                        country={medalData.Country}
                                         gold={medalData.Gold}
                                         silver={medalData.Silver}
                                         bronze={medalData.Bronze}
+                                        total={medalData.Total}
                                     />
                         })
                     }

@@ -1,6 +1,7 @@
 var React = require('react');
 
 var MedalList = require('./components/MedalList');
+var Footer = require('./components/Footer');
 
 var App = React.createClass({
 
@@ -8,6 +9,7 @@ var App = React.createClass({
 		return (
 			<div>
 				<MedalList />
+                <Footer />
 			</div>
 		)
 	}

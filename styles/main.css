@@ -53,6 +53,12 @@ body {
     padding-bottom: 1em;
 }
 
+footer {
+	background-color: #434A54;
+	padding: 1em;
+	margin-top: 2em;
+}
+
 @media (max-width: 768px) {
   .hero {
     background-position: -200px -220px;
