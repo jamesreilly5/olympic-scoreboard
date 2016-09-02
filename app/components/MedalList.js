@@ -29,14 +29,7 @@ var MedalList = React.createClass({
         var medalTallyList = this.state.medalTally;
 
         return (
-            <div clasName='container'>
-                <section className='hero jumbotron'>
-                    <div className='hero-panel'>
-                        <h1 className='text-center'>2008 Beijing Olympics</h1>
-                        <h2 className='text-center'>Final results</h2>
-                    </div>
-                </section>
-
+            <div>
                 <section className='container medal-list'>
                     <div className='row'>
                         <div className='col-xs-offset-1 col-xs-3'>
