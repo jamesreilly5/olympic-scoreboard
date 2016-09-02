@@ -4,13 +4,11 @@ var MedalTally = React.createClass({
 
 	render: function() {
 		return (
-            <div className='col-md-12'>
-                <div className='row'>
-                    <div className='col-md-6'>{this.props.country}</div>
-                    <div className='col-md-2'>{this.props.gold}</div>
-                    <div className='col-md-2'>{this.props.silver}</div>
-                    <div className='col-md-2'>{this.props.bronze}</div>
-                </div>
+            <div className='row medal-info'>
+                <div className='col-xs-6'>{this.props.country}</div>
+                <div className='col-xs-2'>{this.props.gold}</div>
+                <div className='col-xs-2'>{this.props.silver}</div>
+                <div className='col-xs-2'>{this.props.bronze}</div>
             </div>
 		)
 	}
