@@ -3,8 +3,6 @@ TEST-App.xml
 npm-debug.log
 
 # Build artifacts
-dist/main.js
-dist/main.css
 build/main.css
 build/main.js
 build/specs.js

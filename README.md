@@ -12,6 +12,8 @@ React app that displays results from the 2008 Beijing Olympics
 - Run `NODE_ENV=development gulp`
 - Go to `localhost:8889` to display the app
 
+Alternatively you can open the index.html file in the dist directory
+
 **Run tests in browser**
 
 Go to `localhost:8889/testrunner.html` to see your tests
