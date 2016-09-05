@@ -1,7 +1,7 @@
 # Olympic Scoreboard
 React app that displays results from the 2008 Beijing Olympics
 
-![Alt text](/screenshot.png?raw=true "2008 Beijing Olympics scoreboard")
+![Alt text](/screenshot.jpg?raw=true "2008 Beijing Olympics scoreboard")
 
 ### Dependencies
 * Node/npm
