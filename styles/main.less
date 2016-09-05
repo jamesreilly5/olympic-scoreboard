@@ -1,74 +1,68 @@
-/* general */
-
 body {
-	background-color: #e3e3e3;
+    background-color: #e3e3e3;
     color: white;
-}
 
-.hero {
-    background-image: url("hero.jpg");
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    text-shadow: 0 2px 2px #333f48;
-    border-bottom: 1px solid #e3e3e3;
-    height: 450px;
-    margin-bottom: 1em;
-    background-position: -1px -220px;
-    background-size: 1437px;
-}
+    .hero {
+        background-image: url("hero.jpg");
+        background-color: #cccccc;
+        background-repeat: no-repeat;
+        text-shadow: 0 2px 2px #333f48;
+        border-bottom: 1px solid #e3e3e3;
+        height: 450px;
+        margin-bottom: 1em;
+        background-position: -1px -220px;
+        background-size: 1437px;
 
-.hero-panel {
-    width: 70%;
-    margin: auto;
-	background-color: #464646;
-	background: rgba(70,70,70,0.3);
-	border: 1px solid rgba(255,255,255,0.3);
-	border-radius: 7px / 7px;
-	padding: 3em;
-}
+        .hero-panel {
+            width: 70%;
+            margin: auto;
+            background-color: #464646;
+            background: rgba(70,70,70,0.3);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 7px / 7px;
+            padding: 3em;
+        }
+    }
 
-.medal-list {
-	border: 1px solid #e3e3e3;
-	padding: 2em;
-	line-height: 2em;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
-	background-color: #ffffff;
-	color: #697684;
+    .medal-list {
+        border: 1px solid #e3e3e3;
+        padding: 2em;
+        line-height: 2em;
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        background-color: #ffffff;
+        color: #697684;
 
-	-webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.5);
-	-moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.5);
-	box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.5);
-}
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+        -moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+        box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.5);
 
-.medal-info {
-	padding: 1em 0;
-	border-bottom: 1px solid #e3e3e3;
-}
+        .medal-name {
+            text-transform:capitalize;
+        }
 
-.medal-name {
-    text-transform:capitalize;
-}
+        .medal-info {
+            padding: 1em 0;
+            border-bottom: 1px solid #e3e3e3;
+        }
 
-.title {
-    margin-bottom: 1em;
-    border-bottom: 1px solid #e3e3e3;
-    padding-bottom: 1em;
-}
-
-footer {
-	background-color: #434A54;
-	padding: 1em;
-	margin-top: 2em;
+        footer {
+            background-color: #434A54;
+            padding: 1em;
+            margin-top: 2em;
+        }
+    }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    background-position: -200px -220px;
-  }
+    body {
+        .hero {
+            background-position: -200px -220px;
 
-  .hero-panel {
-      width: 90%;
-  }
+            .hero-panel {
+                width: 90%;
+            }
+        }
+    }
 }
