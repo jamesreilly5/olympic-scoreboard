@@ -18,6 +18,9 @@ var plumber = require('gulp-plumber');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var cors = require('cors');
+var less = require('gulp-less');
+var watchLess = require('gulp-watch-less');
+var path = require('path');
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
@@ -130,17 +133,24 @@ var cssTask = function (options) {
         console.log(arguments);
         var start = new Date();
         console.log('Building CSS bundle');
-        gulp.src(options.src)
-          .pipe(concat('main.css'))
-          .pipe(gulp.dest(options.dest))
-          .pipe(notify(function () {
-            console.log('CSS bundle built in ' + (Date.now() - start) + 'ms');
-          }));
-      };
+          gulp.src(options.src)
+            .pipe(watchLess(options.src))
+            .pipe(less({
+              paths: [ path.join(__dirname, 'less') ]
+            }))
+            .pipe(concat('main.css'))
+            .pipe(gulp.dest(options.dest))
+            .pipe(notify(function () {
+              console.log('CSS bundle built in ' + (Date.now() - start) + 'ms');
+            }));
+        };
       run();
       gulp.watch(options.src, run);
     } else {
       gulp.src(options.src)
+        .pipe(less({
+          paths: [ path.join(__dirname, 'less') ]
+        }))
         .pipe(concat('main.css'))
         .pipe(cssmin())
         .pipe(gulp.dest(options.dest));
@@ -170,7 +180,7 @@ gulp.task('default', function () {
 
   cssTask({
     development: true,
-    src: './styles/**/*.css',
+    src: './styles/**/*.less',
     dest: './build'
   });
 
@@ -200,7 +210,7 @@ gulp.task('deploy', function () {
 
   cssTask({
     development: false,
-    src: './styles/**/*.css',
+    src: './styles/**/*.less',
     dest: './dist'
   });
 
